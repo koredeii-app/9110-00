@@ -21,6 +21,21 @@ body {
 }
 
 /*
+  ヘッダー
+*/
+h1 {
+
+  text-align: center;
+
+}
+
+.notice {
+
+  text-align: center;
+
+}
+
+/*
   アプリ全体
 */
 #app {

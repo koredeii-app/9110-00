@@ -179,18 +179,9 @@ call189: {
         number: "#9110",
         text: "警察相談",
         description:
-          "事件か分からない時など",
+          "緊急ではない、事件か分からない時など",
         color: "#546e7a",
         next: "call9110"
-      },
-
-      {
-        number: "#8891",
-        text: "医療・支援",
-        description:
-          "性犯罪・性暴力被害者のためのワンストップ支援センター",
-        color: "#6a1b9a",
-        next: "call8891"
       },
 
       {
@@ -200,6 +191,15 @@ call189: {
           "性犯罪被害相談電話",
         color: "#546e7a",
         next: "call8103"
+      },
+
+      {
+        number: "#8891",
+        text: "医療・支援",
+        description:
+          "性犯罪・性暴力被害者のためのワンストップ支援センター",
+        color: "#6FA8DC",
+        next: "call8891"
       },
 
       {

@@ -276,7 +276,7 @@ call9110: {
 call8891: {
 
   question:
-    "性犯罪・性暴力被害者 ワンストップ支援センター #8891",
+    "性犯罪・性暴力被害者 ワンストップ支援センター",
 
   description:
     "性犯罪・性暴力被害者が医療的支援・相談・法的支援を受けられます。\n整理できていなくても相談できます。",
@@ -295,7 +295,16 @@ call8891: {
       color: "#6a1b9a",
       tel: "#8891"
     }
+  ],
+
+  afterLinks: [
+    {
+      text: "全国共通の電話番号",
+      url:
+        "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html"
+    }
   ]
+
 },
 
 /*
@@ -846,6 +855,43 @@ if (screen.links) {
     card.appendChild(button);
 
   });
+
+  /*
+    ボタン後リンク
+  */
+  if (screen.afterLinks) {
+
+    const afterLinks =
+      document.createElement("div");
+
+    afterLinks.style.marginTop =
+      "4px";
+
+    afterLinks.style.marginBottom =
+      "16px";
+
+    screen.afterLinks.forEach(link => {
+
+      const a =
+        document.createElement("a");
+
+      a.href = link.url;
+
+      a.target = "_blank";
+
+      a.textContent = link.text;
+
+      a.style.display = "block";
+
+      a.style.marginBottom = "10px";
+
+      afterLinks.appendChild(a);
+
+    });
+
+    card.appendChild(afterLinks);
+
+  }
 
   /*
     戻る

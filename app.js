@@ -53,9 +53,9 @@ const screens = {
       },
 
       {
-        text: "電話の練習",
+        text: "その他・お問い合わせ",
         description:
-          "発信操作や電話の練習",
+          "電話の故障・電報・NTTへの問い合わせなど",
         color: "#1e88e5",
         next: "practice"
       }
@@ -122,6 +122,14 @@ call8000: {
       color: "#26a69a",
       tel: "#8000"
     }
+  ],
+
+  afterLinks: [
+    {
+      text: "厚生労働省の公式情報を見る",
+      url:
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_55223.html"
+    }
   ]
 },
 
@@ -149,6 +157,14 @@ call189: {
         "児童相談所へつながります",
       color: "#43a047",
       tel: "189"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "こども家庭庁の公式情報を見る",
+      url:
+        "https://www.cfa.go.jp/policies/jidougyakutai/gyakutai-taiou-dial"
     }
   ]
 },
@@ -239,6 +255,14 @@ call7119: {
       color: "#ef5350",
       tel: "#7119"
     }
+  ],
+
+  afterLinks: [
+    {
+      text: "総務省消防庁の公式情報を見る",
+      url:
+        "https://www.fdma.go.jp/mission/enrichment/appropriate/appropriate007.html"
+    }
   ]
 },
 
@@ -266,6 +290,14 @@ call9110: {
         "警察相談専用電話",
       color: "#546e7a",
       tel: "#9110"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "警視庁の公式情報を見る",
+      url:
+        "https://www.keishicho.metro.tokyo.lg.jp/jiken_jiko/110/110_9110.html"
     }
   ]
 },
@@ -332,6 +364,14 @@ call8103: {
       color: "#546e7a",
       tel: "#8103"
     }
+  ],
+
+  afterLinks: [
+    {
+      text: "警察庁の公式情報を見る",
+      url:
+        "https://www.npa.go.jp/higaisya/seihanzai/seihanzai.html"
+    }
   ]
 },
 
@@ -358,6 +398,14 @@ call188: {
         "消費生活相談窓口",
       color: "#fb8c00",
       tel: "188"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "消費者庁の公式情報を見る",
+      url:
+        "https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/"
     }
   ]
 },
@@ -505,6 +553,14 @@ call171: {
         color: "#e53935",
         tel: "110"
       }
+    ],
+
+    afterLinks: [
+      {
+        text: "警視庁の公式情報を見る",
+        url:
+          "https://www.keishicho.metro.tokyo.lg.jp/jiken_jiko/110/110_110.html"
+      }
     ]
   },
 
@@ -532,6 +588,14 @@ call171: {
           "救急・火災",
         color: "#d81b60",
         tel: "119"
+      }
+    ],
+
+    afterLinks: [
+      {
+        text: "総務省消防庁の公式情報を見る",
+        url:
+          "https://www.fdma.go.jp/mission/enrichment/kyukyumusen_kinkyutuhou/119.html"
       }
     ]
   },
@@ -561,21 +625,56 @@ call171: {
         color: "#00897b",
         tel: "118"
       }
+    ],
+
+    afterLinks: [
+      {
+        text: "海上保安庁の公式情報を見る",
+        url:
+          "https://www.kaiho.mlit.go.jp/doc/tel118.html"
+      }
     ]
   },
 
   /*
-    練習
+    その他・お問い合わせ
   */
   practice: {
 
     question:
-      "電話の練習",
+      "その他・お問い合わせ",
 
     description:
-      "電話をかける操作に慣れるための練習用です。",
+      "電話に関する各種お問い合わせ番号です。",
 
     options: [
+
+      {
+        number: "113",
+        text: "電話の故障受付",
+        description:
+          "固定電話・ひかり電話の故障",
+        color: "#1e88e5",
+        next: "call113"
+      },
+
+      {
+        number: "115",
+        text: "電報の申し込み",
+        description:
+          "祝電・弔電などの電報",
+        color: "#1e88e5",
+        next: "call115"
+      },
+
+      {
+        number: "116",
+        text: "NTTお問い合わせ",
+        description:
+          "電話の新設・移転などの相談",
+        color: "#1e88e5",
+        next: "call116"
+      },
 
       {
         number: "117",
@@ -586,6 +685,114 @@ call171: {
         next: "call117"
       }
 
+    ]
+  },
+
+  /*
+    113
+  */
+  call113: {
+
+    question:
+      "113 電話の故障受付",
+
+    description:
+      "固定電話・ひかり電話の故障やトラブルを受け付けています。\n24時間365日つながります。",
+
+    notes: [
+      "通話料無料",
+      "携帯電話からは0120-444-113"
+    ],
+
+    options: [
+      {
+        number: "113",
+        text: "電話する",
+        description:
+          "電話の故障受付",
+        color: "#1e88e5",
+        tel: "0120-444-113"
+      }
+    ],
+
+    afterLinks: [
+      {
+        text: "NTT東日本の公式情報を見る",
+        url:
+          "https://web113.ntt-east.co.jp/"
+      }
+    ]
+  },
+
+  /*
+    115
+  */
+  call115: {
+
+    question:
+      "115 電報の申し込み",
+
+    description:
+      "祝電・弔電などの電報を電話で申し込めます。",
+
+    notes: [
+      "通話料・電報料金がかかります",
+      "受付時間は8時から19時までです"
+    ],
+
+    options: [
+      {
+        number: "115",
+        text: "電話する",
+        description:
+          "電報の申し込み",
+        color: "#1e88e5",
+        tel: "115"
+      }
+    ],
+
+    afterLinks: [
+      {
+        text: "NTT東日本の公式情報を見る",
+        url:
+          "https://flets.com/denwa/3number/"
+      }
+    ]
+  },
+
+  /*
+    116
+  */
+  call116: {
+
+    question:
+      "116 NTTお問い合わせ",
+
+    description:
+      "電話の新設・移転や各種サービスについて相談できます。",
+
+    notes: [
+      "通話料無料（市外局番なしでご利用可能）",
+      "受付時間は平日9時から17時までです（年末年始を除く）"
+    ],
+
+    options: [
+      {
+        number: "116",
+        text: "電話する",
+        description:
+          "NTTお問い合わせ",
+        color: "#1e88e5",
+        tel: "116"
+      }
+    ],
+
+    afterLinks: [
+      {
+        text: "NTT東日本の公式情報を見る",
+        url:
+          "https://web116.jp/contact/tel_phone.html"
+      }
     ]
   },
 
@@ -612,6 +819,14 @@ call171: {
           "時刻音声案内",
         color: "#1e88e5",
         tel: "117"
+      }
+    ],
+
+    afterLinks: [
+      {
+        text: "NTT東日本の公式情報を見る",
+        url:
+          "https://flets.com/denwa/3number/"
       }
     ]
   }

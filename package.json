@@ -2,7 +2,7 @@
   "name": "koredeii-support",
   "version": "1.0.0",
   "private": true,
-  "description": "どこに相談？",
+  "description": "押すだけ相談ナビ",
   "scripts": {
     "sync": "cap sync android",
     "open:android": "cap open android"

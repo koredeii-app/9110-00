@@ -11,3 +11,4 @@ android/.cxx/
 *.aab
 *.jks
 *.keystore
+android/keystore.properties

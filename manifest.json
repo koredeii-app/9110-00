@@ -1,6 +1,6 @@
 {
-  "name": "どこに相談？",
-  "short_name": "どこに相談？",
+  "name": "押すだけ相談ナビ",
+  "short_name": "押すだけ相談ナビ",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

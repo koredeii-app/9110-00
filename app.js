@@ -3,6 +3,17 @@ const app = document.getElementById("app");
 const historyStack = [];
 
 /*
+  メニューアイコン
+*/
+const icons = {
+  child: "icons/menu/child.png",
+  question: "icons/menu/question.png",
+  disaster: "icons/menu/disaster.png",
+  emergency: "icons/menu/emergency.png",
+  phone: "icons/menu/phone.png"
+};
+
+/*
   画面データ
 */
 const screens = {
@@ -25,6 +36,7 @@ const screens = {
         description:
           "体調・虐待・家庭の不安",
         color: "#43a047",
+        icon: "child",
         next: "children"
       },
 
@@ -33,6 +45,7 @@ const screens = {
         description:
           "緊急か分からない時",
         color: "#546e7a",
+        icon: "question",
         next: "consult"
       },
 
@@ -41,6 +54,7 @@ const screens = {
         description:
           "安否確認・災害時の連絡",
         color: "#8e24aa",
+        icon: "disaster",
         next: "disaster"
       },
 
@@ -49,6 +63,7 @@ const screens = {
         description:
           "事件・事故・火災など",
         color: "#e53935",
+        icon: "emergency",
         next: "emergency"
       },
 
@@ -57,6 +72,7 @@ const screens = {
         description:
           "電話の故障・電報・NTTへの問い合わせなど",
         color: "#1e88e5",
+        icon: "phone",
         next: "practice"
       }
 
@@ -977,17 +993,38 @@ if (screen.links) {
     button.style.gap = "16px";
 
     /*
-      番号
+      番号 / アイコン
     */
     const number =
       document.createElement("div");
 
-    number.textContent =
-      option.number || "";
+    if (option.icon && icons[option.icon]) {
 
-    number.style.fontSize = "28px";
-    number.style.fontWeight = "bold";
-    number.style.minWidth = "90px";
+      const img =
+        document.createElement("img");
+
+      img.src = icons[option.icon];
+
+      img.alt = "";
+
+      img.style.width = "54px";
+      img.style.height = "54px";
+      img.style.minWidth = "54px";
+      img.style.borderRadius = "14px";
+      img.style.display = "block";
+
+      number.appendChild(img);
+
+    } else {
+
+      number.textContent =
+        option.number || "";
+
+      number.style.fontSize = "28px";
+      number.style.fontWeight = "bold";
+      number.style.minWidth = "90px";
+
+    }
 
     /*
       右側

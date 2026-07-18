@@ -1177,6 +1177,26 @@ if (screen.links) {
 }
 
 /*
+  Android実機の戻るボタン用
+*/
+window.handleAndroidBack = function () {
+
+  if (historyStack.length > 0) {
+
+    const previous =
+      historyStack.pop();
+
+    renderScreen(previous);
+
+    return true;
+
+  }
+
+  return false;
+
+};
+
+/*
   初期表示
 */
 renderScreen("start");

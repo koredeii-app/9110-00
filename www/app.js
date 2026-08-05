@@ -1211,7 +1211,7 @@ if ("serviceWorker" in navigator) {
     try {
 
       await navigator.serviceWorker.register(
-        "/service-worker.js"
+        "service-worker.js"
       );
 
       console.log("Service Worker Registered");

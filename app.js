@@ -235,6 +235,15 @@ call189: {
       },
 
       {
+        number: "#8008",
+        text: "DV相談ナビ",
+        description:
+          "配偶者・パートナーからの暴力の相談",
+        color: "#ab47bc",
+        next: "call8008"
+      },
+
+      {
         number: "188",
         text: "消費者トラブル",
         description:
@@ -350,6 +359,43 @@ call8891: {
       text: "全国共通の電話番号",
       url:
         "https://www.gender.go.jp/policy/no_violence/seibouryoku/consult.html"
+    }
+  ]
+
+},
+
+/*
+  #8008
+*/
+call8008: {
+
+  question:
+    "DV相談ナビ #8008",
+
+  description:
+    "配偶者やパートナーからの暴力について相談できます。\n電話番号から最寄りの都道府県の相談機関に自動転送されます。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料がかかります",
+    "受付時間は相談機関によって異なります"
+  ],
+
+  options: [
+    {
+      number: "#8008",
+      text: "電話する",
+      description:
+        "DV相談ナビ",
+      color: "#ab47bc",
+      tel: "#8008"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "内閣府男女共同参画局の公式情報を見る",
+      url:
+        "https://www.gender.go.jp/policy/no_violence/dv_navi/index.html"
     }
   ]
 

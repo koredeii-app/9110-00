@@ -1384,8 +1384,33 @@ if (screen.links) {
 
     } else {
 
-      number.textContent =
+      const numberText =
         option.number || "";
+
+      const dashIndex =
+        numberText.indexOf("-");
+
+      if (dashIndex === -1) {
+
+        number.textContent =
+          numberText;
+
+      } else {
+
+        number.textContent =
+          numberText.slice(0, dashIndex + 1);
+
+        number.appendChild(
+          document.createElement("br")
+        );
+
+        number.appendChild(
+          document.createTextNode(
+            numberText.slice(dashIndex + 1)
+          )
+        );
+
+      }
 
       number.style.fontSize = "28px";
       number.style.fontWeight = "bold";

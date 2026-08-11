@@ -108,6 +108,33 @@ const screens = {
           "虐待・家庭・子育て相談",
         color: "#43a047",
         next: "call189"
+      },
+
+      {
+        number: "0120-99-7777",
+        text: "チャイルドライン",
+        description:
+          "18歳までの子ども専用電話",
+        color: "#29b6f6",
+        next: "callchildline"
+      },
+
+      {
+        number: "0120-0-78310",
+        text: "24時間子供SOSダイヤル",
+        description:
+          "いじめなど子供のSOS全般の相談",
+        color: "#ff8f00",
+        next: "call78310"
+      },
+
+      {
+        number: "0120-007-110",
+        text: "こどもの人権110番",
+        description:
+          "いじめ・虐待など人権に関する相談",
+        color: "#5d4037",
+        next: "callkodomo110"
       }
 
     ]
@@ -250,6 +277,42 @@ call189: {
           "契約・詐欺・悪質商法",
         color: "#fb8c00",
         next: "call188"
+      },
+
+      {
+        number: "0120-061-338",
+        text: "＃いのちSOS",
+        description:
+          "死にたい気持ちの相談",
+        color: "#5c6bc0",
+        next: "callinochisos"
+      },
+
+      {
+        number: "0120-279-338",
+        text: "よりそいホットライン",
+        description:
+          "暮らしの悩み全般の相談（外国語対応も）",
+        color: "#00acc1",
+        next: "callyorisoi"
+      },
+
+      {
+        number: "0120-783-556",
+        text: "いのちの電話",
+        description:
+          "つらい気持ちの相談（全国ネットワーク）",
+        color: "#8d6e63",
+        next: "callinochinodenwa"
+      },
+
+      {
+        number: "0570-064-556",
+        text: "こころの健康相談統一ダイヤル",
+        description:
+          "最寄りの公的相談窓口に自動接続",
+        color: "#7cb342",
+        next: "callkokoro556"
       }
 
     ]
@@ -468,6 +531,264 @@ call188: {
       text: "消費者庁の公式情報を見る",
       url:
         "https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/"
+    }
+  ]
+},
+
+/*
+  ＃いのちSOS
+*/
+callinochisos: {
+
+  question:
+    "＃いのちSOS",
+
+  description:
+    "「死にたい」「消えたい」「生きることに疲れた」といった気持ちを、専門相談員が受け止めます。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料",
+    "対応時間は曜日によって異なります（詳細は公式サイト参照）"
+  ],
+
+  options: [
+    {
+      number: "0120-061-338",
+      text: "電話する",
+      description:
+        "＃いのちSOS",
+      color: "#5c6bc0",
+      tel: "0120-061-338"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "NPO法人ライフリンクの公式情報を見る",
+      url:
+        "https://www.lifelink.or.jp/inochisos/"
+    }
+  ]
+},
+
+/*
+  よりそいホットライン
+*/
+callyorisoi: {
+
+  question:
+    "よりそいホットライン",
+
+  description:
+    "暮らしの中のさまざまな悩みを相談できます。DV・性暴力、外国語相談、性的指向や性自認の相談などにも対応しています。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料",
+    "24時間対応",
+    "福島県は0120-279-226"
+  ],
+
+  options: [
+    {
+      number: "0120-279-338",
+      text: "電話する",
+      description:
+        "よりそいホットライン",
+      color: "#00acc1",
+      tel: "0120-279-338"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "社会的包摂サポートセンターの公式情報を見る",
+      url:
+        "https://www.since2011.net/yorisoi/"
+    }
+  ]
+},
+
+/*
+  いのちの電話
+*/
+callinochinodenwa: {
+
+  question:
+    "いのちの電話",
+
+  description:
+    "つらい気持ちや孤独感などを相談できます。全国の「いのちの電話」ネットワークが対応します。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料（フリーダイヤル）",
+    "毎日16時〜21時",
+    "毎月10日は8時〜翌日8時"
+  ],
+
+  options: [
+    {
+      number: "0120-783-556",
+      text: "電話する",
+      description:
+        "いのちの電話",
+      color: "#8d6e63",
+      tel: "0120-783-556"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "日本いのちの電話連盟の公式情報を見る",
+      url:
+        "https://inochinodenwa.org/"
+    }
+  ]
+},
+
+/*
+  こころの健康相談統一ダイヤル
+*/
+callkokoro556: {
+
+  question:
+    "こころの健康相談統一ダイヤル",
+
+  description:
+    "全国共通の電話番号から、お住まいの都道府県・政令指定都市の心の健康相談窓口につながります。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料がかかります（ナビダイヤル）",
+    "平日9時〜21時、土日祝10時〜16時",
+    "年末年始（12/29〜1/3）を除く"
+  ],
+
+  options: [
+    {
+      number: "0570-064-556",
+      text: "電話する",
+      description:
+        "こころの健康相談統一ダイヤル",
+      color: "#7cb342",
+      tel: "0570-064-556"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "厚生労働省「まもろうよ こころ」を見る",
+      url:
+        "https://www.mhlw.go.jp/mamorouyokokoro/"
+    }
+  ]
+},
+
+/*
+  チャイルドライン
+*/
+callchildline: {
+
+  question:
+    "チャイルドライン",
+
+  description:
+    "18歳までの子どもが、どんなことでも相談できる電話です。名前は言わなくても大丈夫です。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料",
+    "毎日16時〜21時",
+    "18歳までの子ども専用"
+  ],
+
+  options: [
+    {
+      number: "0120-99-7777",
+      text: "電話する",
+      description:
+        "チャイルドライン",
+      color: "#29b6f6",
+      tel: "0120-99-7777"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "チャイルドラインの公式情報を見る",
+      url:
+        "https://childline.or.jp/tel"
+    }
+  ]
+},
+
+/*
+  24時間子供SOSダイヤル
+*/
+call78310: {
+
+  question:
+    "24時間子供SOSダイヤル",
+
+  description:
+    "いじめなど、子供のSOS全般について24時間いつでも相談できます。都道府県・指定都市教育委員会が運営しています。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料",
+    "24時間対応",
+    "匿名で相談可能"
+  ],
+
+  options: [
+    {
+      number: "0120-0-78310",
+      text: "電話する",
+      description:
+        "24時間子供SOSダイヤル",
+      color: "#ff8f00",
+      tel: "0120-0-78310"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "文部科学省の公式情報を見る",
+      url:
+        "https://www.mext.go.jp/ijime/detail/dial.htm"
+    }
+  ]
+},
+
+/*
+  こどもの人権110番
+*/
+callkodomo110: {
+
+  question:
+    "こどもの人権110番",
+
+  description:
+    "いじめや体罰、暴言、家庭内の虐待など、子どもの人権に関する相談ができます。子どもだけでなく、子どものことで悩む大人からの相談もできます。\n整理できていなくても相談できます。",
+
+  notes: [
+    "通話料無料",
+    "平日8:30〜17:15",
+    "法務局・人権擁護委員が対応"
+  ],
+
+  options: [
+    {
+      number: "0120-007-110",
+      text: "電話する",
+      description:
+        "こどもの人権110番",
+      color: "#5d4037",
+      tel: "0120-007-110"
+    }
+  ],
+
+  afterLinks: [
+    {
+      text: "法務省の公式情報を見る",
+      url:
+        "https://www.moj.go.jp/JINKEN/jinken112.html"
     }
   ]
 },

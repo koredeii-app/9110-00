@@ -1,24 +1,43 @@
 package com.koredeii.supportdial;
 
+import android.os.Bundle;
+import androidx.activity.OnBackPressedCallback;
 import com.getcapacitor.BridgeActivity;
 
 public class MainActivity extends BridgeActivity {
 
     @Override
-    public void onBackPressed() {
+    public void onCreate(Bundle savedInstanceState) {
 
-        getBridge().getWebView().evaluateJavascript(
-            "(function(){ return !!(window.handleAndroidBack && window.handleAndroidBack()); })();",
-            value -> {
+        super.onCreate(savedInstanceState);
 
-                if (!"true".equals(value)) {
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
 
-                    MainActivity.super.onBackPressed();
+            @Override
+            public void handleOnBackPressed() {
 
-                }
+                getBridge().getWebView().evaluateJavascript(
+                    "(function(){ return !!(window.handleAndroidBack && window.handleAndroidBack()); })();",
+                    value -> {
+
+                        if (!"true".equals(value)) {
+
+                            setEnabled(false);
+
+                            getOnBackPressedDispatcher().onBackPressed();
+
+                            setEnabled(true);
+
+                        }
+
+                    }
+                );
 
             }
-        );
+
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, callback);
 
     }
 

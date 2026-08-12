@@ -3,6 +3,51 @@ const app = document.getElementById("app");
 const historyStack = [];
 
 /*
+  アプリ内レビュー
+*/
+const InAppReview =
+  (window.Capacitor && window.Capacitor.registerPlugin)
+    ? window.Capacitor.registerPlugin("InAppReview")
+    : null;
+
+function maybeRequestReview() {
+
+  try {
+
+    if (!InAppReview) return;
+
+    if (
+      !window.Capacitor.isNativePlatform ||
+      !window.Capacitor.isNativePlatform()
+    ) return;
+
+    if (localStorage.getItem("reviewRequested")) return;
+
+    const count =
+      Number(localStorage.getItem("callConfirmCount") || "0") + 1;
+
+    localStorage.setItem(
+      "callConfirmCount",
+      String(count)
+    );
+
+    if (count >= 3) {
+
+      localStorage.setItem("reviewRequested", "1");
+
+      InAppReview.requestReview();
+
+    }
+
+  } catch (error) {
+
+    console.log(error);
+
+  }
+
+}
+
+/*
   メニューアイコン
 */
 const icons = {
@@ -1489,6 +1534,8 @@ if (screen.links) {
 
           window.location.href =
             "tel:" + option.tel;
+
+          maybeRequestReview();
 
         }
 

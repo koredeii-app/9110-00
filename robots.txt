@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koredeii-app.github.io/9110-00/sitemap.xml

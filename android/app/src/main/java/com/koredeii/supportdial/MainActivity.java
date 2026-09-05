@@ -20,7 +20,17 @@ public class MainActivity extends BridgeActivity {
                     "(function(){ return !!(window.handleAndroidBack && window.handleAndroidBack()); })();",
                     value -> {
 
-                        if (!"true".equals(value)) {
+                        if ("true".equals(value)) {
+
+                            return;
+
+                        }
+
+                        if (getBridge().getWebView().canGoBack()) {
+
+                            getBridge().getWebView().goBack();
+
+                        } else {
 
                             setEnabled(false);
 

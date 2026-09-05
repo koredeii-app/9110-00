@@ -33,6 +33,54 @@
 </head>
 <body>
 
+  <!-- ハンバーガーメニュー -->
+  <button
+    id="menuToggle"
+    class="menu-toggle"
+    aria-label="メニューを開く"
+  >☰</button>
+
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+  <nav id="menuDrawer" class="menu-drawer">
+
+    <div class="menu-drawer-header">
+      <span>メニュー</span>
+      <button id="menuClose" class="menu-close" aria-label="メニューを閉じる">×</button>
+    </div>
+
+    <div class="menu-section">
+      <h2>このアプリについて</h2>
+      <p>
+        「押すだけ相談ナビ」は、子ども・相談・災害・緊急時など、
+        状況に応じた相談窓口や緊急連絡先の電話番号を
+        ワンタップで案内する無料アプリです。
+      </p>
+    </div>
+
+    <div class="menu-section">
+      <h2>他にもこんなアプリがあります</h2>
+      <p>
+        「押すだけ相談」<br>
+        高齢のご家族の介護について何をすればいいか
+        分からないときに、選択肢を押していくだけで
+        最寄りの地域包括支援センターの連絡先が分かるアプリです。
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.koredeii.osudakesoudan" target="_blank" rel="noopener noreferrer">Google Playでダウンロード</a>
+    </div>
+
+    <div class="menu-section">
+      <a href="privacy.html">プライバシーポリシー</a><br>
+      <a href="terms.html">利用規約</a><br>
+      <a href="disclaimer.html">免責事項</a>
+    </div>
+
+    <div class="menu-section menu-version">
+      バージョン 1.2
+    </div>
+
+  </nav>
+
   <main class="container">
 
     <h1>押すだけ相談ナビ</h1>
@@ -51,6 +99,32 @@
     </div>
 
   </main>
+
+  <!-- ハンバーガーメニュー 開閉 -->
+  <script>
+
+    const menuToggle  = document.getElementById("menuToggle");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuDrawer  = document.getElementById("menuDrawer");
+    const menuClose   = document.getElementById("menuClose");
+
+    function openMenu() {
+      menuDrawer.classList.add("open");
+      menuOverlay.classList.add("open");
+      menuToggle.classList.add("hidden");
+    }
+
+    function closeMenu() {
+      menuDrawer.classList.remove("open");
+      menuOverlay.classList.remove("open");
+      menuToggle.classList.remove("hidden");
+    }
+
+    menuToggle.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+  </script>
 
   <script src="app.js"></script>
 

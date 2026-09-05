@@ -70,9 +70,9 @@
     </div>
 
     <div class="menu-section">
-      <a href="privacy.html">プライバシーポリシー</a><br>
-      <a href="terms.html">利用規約</a><br>
-      <a href="disclaimer.html">免責事項</a>
+      <a href="privacy.html" class="menu-page-link">プライバシーポリシー</a><br>
+      <a href="terms.html" class="menu-page-link">利用規約</a><br>
+      <a href="disclaimer.html" class="menu-page-link">免責事項</a>
     </div>
 
     <div class="menu-section menu-version">
@@ -123,6 +123,38 @@
     menuToggle.addEventListener("click", openMenu);
     menuClose.addEventListener("click", closeMenu);
     menuOverlay.addEventListener("click", closeMenu);
+
+    /*
+      法的ページへ移動する前に
+      「戻ってきたらメニューを開き直す」
+      フラグを保存する
+    */
+    document
+      .querySelectorAll(".menu-page-link")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          sessionStorage.setItem(
+            "reopenMenu",
+            "1"
+          );
+
+        });
+
+      });
+
+    /*
+      法的ページから戻ってきた時、
+      フラグがあればメニューを開き直す
+    */
+    if (sessionStorage.getItem("reopenMenu") === "1") {
+
+      sessionStorage.removeItem("reopenMenu");
+
+      openMenu();
+
+    }
 
   </script>
 

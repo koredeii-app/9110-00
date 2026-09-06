@@ -66,7 +66,7 @@
         分からないときに、選択肢を押していくだけで
         最寄りの地域包括支援センターの連絡先が分かるアプリです。
       </p>
-      <a href="https://play.google.com/store/apps/details?id=com.koredeii.osudakesoudan" target="_blank" rel="noopener noreferrer">Google Playでダウンロード</a>
+      <a href="https://play.google.com/store/apps/details?id=com.koredeii.osudakesoudan" id="soudanPlayLink" target="_blank" rel="noopener noreferrer">Google Playでダウンロード</a>
     </div>
 
     <div class="menu-section">
@@ -123,6 +123,22 @@
     menuToggle.addEventListener("click", openMenu);
     menuClose.addEventListener("click", closeMenu);
     menuOverlay.addEventListener("click", closeMenu);
+
+    /*
+      iPhone/iPadではGoogle PlayにアクセスしてもDLできないため、
+      「押すだけ相談」のWebページ（PWA）へ誘導する
+    */
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    }
+
+    const soudanPlayLink = document.getElementById("soudanPlayLink");
+
+    if (soudanPlayLink && isIOS()) {
+      soudanPlayLink.href = "https://koredeii-app.github.io/care-00/";
+      soudanPlayLink.textContent = "Webページで開く（iPhoneの方はこちら）";
+    }
 
     /*
       法的ページへ移動する前に
